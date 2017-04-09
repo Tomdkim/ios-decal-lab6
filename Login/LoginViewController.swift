@@ -48,15 +48,31 @@ class LoginViewController: UIViewController {
         myView.backgroundColor = UIColor.white
         myView.layer.cornerRadius = Constants.buttonCornerRadius
         myView.layer.masksToBounds = true
+
+        var myId: UITextField = {
+            let myId = UITextField()
+            myId.frame = CGRect(x: 0, y: (UIScreen.main.bounds.midY/2), width: UIScreen.main.bounds.size.width * 0.8, height: UIScreen.main.bounds.size.height * 0.1)
+            myId.placeholder = "Enter your email"
+            myId.font = UIFont(name: "Avenir", size: Constants.titleTextSize)
+            myId.borderStyle = UITextBorderStyle.roundedRect
+            myId.autocorrectionType = UITextAutocorrectionType.no
+            myId.keyboardType = UIKeyboardType.default
+            myId.returnKeyType = UIReturnKeyType.done
+//            myId.backgroundColor = UIColor.gray
+            return myId
+        }()
+        
+        myView.addSubview(myId)
+        
         return myView
     }()
     
-    var id: UITextField = {
-        let myId = UITextField()
-        myId.frame = CGRect(x:, y:, width:, height:)
-        
-        return myId
-    }()
+//    var myId: UITextField = {
+//        let myId = UITextField()
+//        myId.frame = CGRect(x: 0, y: UIScreen.main.bounds.midY/2, width: UIScreen.main.bounds.size.width * 0.8, height: UIScreen.main.bounds.size.height * 0.1)
+//        myId.backgroundColor = UIColor.gray
+//        return myId
+//    }()
 
     
     var button: UIButton = {
@@ -94,6 +110,7 @@ class LoginViewController: UIViewController {
         
         // TODO: layout your views using frames or AutoLayout
         myView.center = view.center
+//        myId.center = view.center
 //        myTitle.center = view.center
         
         // Calculate the width of the button based off the size of the view
@@ -124,6 +141,7 @@ class LoginViewController: UIViewController {
         self.view.addSubview(myTitle)
         self.view.addSubview(myView)
         myView.addSubview(button)
+//        myView.addSubview(myId)
     }
     
     // TODO: create an IBAction for your login button
